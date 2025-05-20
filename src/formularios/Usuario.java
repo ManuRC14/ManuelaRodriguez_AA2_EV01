@@ -132,7 +132,7 @@ public class Usuario extends javax.swing.JFrame {
                                 .addComponent(jLabel2)
                                 .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel6)))))
-                .addContainerGap(331, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
