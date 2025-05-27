@@ -1,5 +1,6 @@
 package clases;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class Conexion {
@@ -60,6 +61,24 @@ public class Conexion {
         }
         return respuesta;
     }
-
-}    
+    
+    public ArrayList<UsuariosGetSet> ListaUsuarios(){
+        ArrayList<UsuariosGetSet> respuesta=new ArrayList<>();
+        try {
+            ps=cn.prepareStatement("select * from usuario");
+            rs=ps.executeQuery();
+            while (rs.next()){
+                UsuariosGetSet usuario=new UsuariosGetSet();
+                usuario.setId(rs.getString("id_Usuario"));
+                usuario.setNombre(rs.getString("Nombre_Completo"));
+                usuario.setUsuario(rs.getString("Usuario"));
+                usuario.setCorreo(rs.getString("Correo"));
+                usuario.setContraseña(rs.getString("Contraseña"));
+                respuesta.add(usuario);
+            }
+        } catch (Exception e) {
+        }
+        return respuesta;
+    }
+}
 //jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=CONVERT_TO_NULL
